@@ -1,7 +1,6 @@
 import { ArrowDown, ArrowUp } from "../assets/icons";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useMediaQuery } from "../hooks/useMediaQuery";
 
 const data = [
   {
