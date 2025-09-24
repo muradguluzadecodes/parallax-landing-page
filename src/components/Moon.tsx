@@ -83,7 +83,7 @@ export default function Moon() {
               ease: "easeIn",
             }}
             viewport={{ once: true }}
-            src="../../src/assets/images/logos/telegram.png"
+            src="/images/logos/telegram.png"
             className="w-[40px]"
           />
           <motion.img
@@ -102,7 +102,7 @@ export default function Moon() {
               ease: "easeIn",
             }}
             viewport={{ once: true }}
-            src="../../src/assets/images/logos/x.png"
+            src="/images/logos/x.png"
             className="w-[40px]"
           />
         </div>
@@ -112,7 +112,7 @@ export default function Moon() {
           rotate,
           scale,
         }}
-        src="../../src/assets/images/moon-2.png"
+        src="/images/moon-2.png"
         className="w-[400px]"
       />
     </section>

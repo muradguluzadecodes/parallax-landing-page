@@ -183,7 +183,7 @@ export default function Leaderboard() {
                 delay: 0.6,
               }}
               viewport={{ once: true }}
-              src="../../src/assets/images/rocket.png"
+              src="/images/rocket.png"
               className="absolute w-[140px] left-[180px] lg:left-60 bottom-[-180px]"
             />
             {data.map((row) => (

@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer className="relative flex flex-col justify-between h-[400px] px-20 pb-10">
       <motion.img
-        src="../../src/assets/images/nasa.png"
+        src="/images/nasa.png"
         className="absolute bottom-0 left-0 w-full"
         style={{
           translateY,
@@ -58,7 +58,7 @@ export default function Footer() {
                   ease: "easeIn",
                 }}
                 viewport={{ once: true }}
-                src="../../src/assets/images/logos/telegram.png"
+                src="/images/logos/telegram.png"
                 className="w-[30px]"
               />
               <motion.img
@@ -77,7 +77,7 @@ export default function Footer() {
                   ease: "easeIn",
                 }}
                 viewport={{ once: true }}
-                src="../../src/assets/images/logos/x.png"
+                src="/images/logos/x.png"
                 className="w-[30px]"
               />
             </div>

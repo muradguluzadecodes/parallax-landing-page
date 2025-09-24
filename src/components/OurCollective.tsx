@@ -5,7 +5,7 @@ export default function OurCollective() {
   return (
     <section className="pt-[20px] lg:pt-[80px] pb-[200px] lg:w-[50%] w-full">
       <motion.img
-        src="../../src/assets/images/star.png"
+        src="/images/star.png"
         className="w-[200px] mb-40"
         initial={{
           x: 0,

@@ -47,7 +47,7 @@ export default function Brands() {
               "w-[150px] min-w-[150px]  lg:w-[300px] lg:min-w-[300px] h-auto flex items-center justify-center"
             )}
           >
-            <img key={img + i} src={`../../src/assets/images/logos/${img}`} />
+            <img key={img + i} src={`/images/logos/${img}`} />
           </div>
         ))}
       </motion.div>

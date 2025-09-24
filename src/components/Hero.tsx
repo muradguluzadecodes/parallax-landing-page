@@ -79,7 +79,7 @@ export default function Hero() {
 
       <motion.img
         style={{ scale: scaleMoon, rotate: rotateMoon }}
-        src="../../src/assets/images/moon.png"
+        src="/images/moon.png"
         className="w-[700px] absolute right-[-20%] top-0 z-[1]"
       />
     </section>
