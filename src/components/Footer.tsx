@@ -1,19 +1,18 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useMediaQuery } from "../hooks/useMediaQuery";
+import useParallaxMotion from "../hooks/useParallaxMotion";
 
 export default function Footer() {
-  const { scrollYProgress } = useScroll();
-
   const isLg = useMediaQuery("(min-width: 1024px)");
 
   const endTranslate = isLg ? 200 : -30;
 
   const endScale = isLg ? 1 : 2.5;
+  const translateY = useParallaxMotion([0.9, 1], [0, endTranslate]);
+  const scale = useParallaxMotion([0.95, 1], [0, 1]);
+  const scaleImg = useParallaxMotion([0.95, 1], [1, endScale]);
+  const opacity = useParallaxMotion([0.95, 1], [0, 1]);
 
-  const translateY = useTransform(scrollYProgress, [0.9, 1], [0, endTranslate]);
-  const scale = useTransform(scrollYProgress, [0.95, 1], [0, 1]);
-  const scaleImg = useTransform(scrollYProgress, [0.95, 1], [1, endScale]);
-  const opacity = useTransform(scrollYProgress, [0.95, 1], [0, 1]);
   return (
     <footer className="relative flex flex-col justify-between h-[400px] px-20 pb-10">
       <motion.img

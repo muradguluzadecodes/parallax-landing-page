@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { OutlineBtn } from "./OutlineBtn";
 
 export default function Header() {
-  motion;
   return (
     <header className="w-full py-10 flex gap-10 justify-center items-center">
       <motion.button

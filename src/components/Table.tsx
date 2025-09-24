@@ -1,14 +1,13 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { OutlineBtn } from "./OutlineBtn";
 import Leaderboard from "./LoaderBoard";
 import { ArrowUp } from "../assets/icons";
+import useParallaxMotion from "../hooks/useParallaxMotion";
 
 export default function Table() {
-  const { scrollYProgress } = useScroll();
+  const translateY = useParallaxMotion([0.3, 0.35], [-300, 0]);
+  const opacity = useParallaxMotion([0.3, 0.35], [0, 1]);
 
-  const translateY = useTransform(scrollYProgress, [0.3, 0.35], [-300, 0]);
-
-  const opacity = useTransform(scrollYProgress, [0.3, 0.35], [0, 1]);
   return (
     <section>
       <motion.div

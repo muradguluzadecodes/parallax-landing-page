@@ -1,10 +1,10 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import useParallaxMotion from "../hooks/useParallaxMotion";
 
 export default function Moon() {
-  const { scrollYProgress } = useScroll();
+  const rotate = useParallaxMotion([0.8, 1], ["0deg", "180deg"]);
+  const scale = useParallaxMotion([0.8, 1], [0.2, 1.2]);
 
-  const rotate = useTransform(scrollYProgress, [0.8, 1], ["0deg", "180deg"]);
-  const scale = useTransform(scrollYProgress, [0.8, 1], [0.2, 1.2]);
   return (
     <section className="flex pt-[160px] pb-[150px] lg:px-20 flex-col gap-10 lg:gap-0 lg:flex-row lg:justify-between items-center">
       <div className="lg:w-[60%]">

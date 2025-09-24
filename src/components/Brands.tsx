@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import useParallaxMotion from "../hooks/useParallaxMotion";
 
 const logos = [
   "solana.png",
@@ -15,11 +16,10 @@ const logos = [
 ];
 
 export default function Brands() {
-  const { scrollYProgress } = useScroll();
+  const translateX = useParallaxMotion([0.6, 0.8], [0, -300]);
+  const scale = useParallaxMotion([0.6, 0.7], [4, 1]);
+  const opacity = useParallaxMotion([0.6, 0.7], [0, 1]);
 
-  const translateX = useTransform(scrollYProgress, [0.6, 0.8], [0, -300]);
-  const scale = useTransform(scrollYProgress, [0.6, 0.7], [4, 1]);
-  const opacity = useTransform(scrollYProgress, [0.6, 0.7], [0, 1]);
   return (
     <section className="lg:pt-[300px] pt-[150px] ">
       <motion.h2

@@ -1,44 +1,32 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { OutlineBtn } from "./OutlineBtn";
 import { useMediaQuery } from "../hooks/useMediaQuery";
+import useParallaxMotion from "../hooks/useParallaxMotion";
 
 export default function Hero() {
-  const { scrollYProgress } = useScroll();
   const isLg = useMediaQuery("(min-width: 1024px)");
 
-  // Desktop vs Mobile sizes
-  const startSize = isLg ? 100 : 50; // px
-  const endSize = isLg ? 48 : 30; // px
+  const startSize = isLg ? 100 : 50;
+  const endSize = isLg ? 48 : 30;
 
-  const startLine = isLg ? 130 : 74; // px (tweak as you like)
-  const endLine = isLg ? 50 : 38; // px
+  const startLine = isLg ? 130 : 74;
+  const endLine = isLg ? 50 : 38;
 
-  const color = useTransform(
-    scrollYProgress,
-    [0.02, 1],
-    ["transparent", "#ffffff"]
-  );
-  const translateY = useTransform(scrollYProgress, [0, 0.02], [0, -50]);
+  const color = useParallaxMotion([0.02, 1], ["transparent", "#ffffff"]);
+  const translateY = useParallaxMotion([0, 0.02], [0, -50]);
 
-  // Use the breakpoint-specific values in your transforms
-  const fontSize = useTransform(
-    scrollYProgress,
+  const fontSize = useParallaxMotion(
     [0, 0.02],
     [`${startSize}px`, `${endSize}px`]
   );
 
-  const lineHeight = useTransform(
-    scrollYProgress,
+  const lineHeight = useParallaxMotion(
     [0, 0.02],
     [`${startLine}px`, `${endLine}px`]
   );
 
-  const scaleMoon = useTransform(scrollYProgress, [0, 0.05], [1, 1.4]);
-  const rotateMoon = useTransform(
-    scrollYProgress,
-    [0, 0.05],
-    ["0deg", "10deg"]
-  );
+  const scaleMoon = useParallaxMotion([0, 0.05], [1, 1.4]);
+  const rotateMoon = useParallaxMotion([0, 0.05], ["0deg", "10deg"]);
 
   return (
     <section className="relative py-10">

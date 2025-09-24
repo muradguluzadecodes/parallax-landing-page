@@ -1,21 +1,20 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import useParallaxMotion from "../hooks/useParallaxMotion";
 
 export default function Features() {
-  const { scrollYProgress } = useScroll();
+  const opacity1 = useParallaxMotion([0, 0.02], [0, 1]);
+  const x1 = useParallaxMotion([0, 0.02], [200, 0]);
+  const y1 = useParallaxMotion([0, 0.02], [100, 0]);
 
-  const opacity1 = useTransform(scrollYProgress, [0, 0.02], [0, 1]);
-  const x1 = useTransform(scrollYProgress, [0, 0.02], [200, 0]);
-  const y1 = useTransform(scrollYProgress, [0, 0.02], [100, 0]);
+  // Second card
+  const opacity2 = useParallaxMotion([0.02, 0.025], [0, 1]);
+  const x2 = useParallaxMotion([0.02, 0.025], [200, 0]);
+  const y2 = useParallaxMotion([0.02, 0.025], [100, 0]);
 
-  // Second card (starts a bit later)
-  const x2 = useTransform(scrollYProgress, [0.02, 0.025], [200, 0]);
-  const y2 = useTransform(scrollYProgress, [0.02, 0.025], [100, 0]);
-  const opacity2 = useTransform(scrollYProgress, [0.02, 0.025], [0, 1]);
-
-  // Third card (starts even later)
-  const x3 = useTransform(scrollYProgress, [0.025, 0.03], [200, 0]);
-  const y3 = useTransform(scrollYProgress, [0.025, 0.03], [100, 0]);
-  const opacity3 = useTransform(scrollYProgress, [0.025, 0.03], [0, 1]);
+  // Third card
+  const opacity3 = useParallaxMotion([0.025, 0.03], [0, 1]);
+  const x3 = useParallaxMotion([0.025, 0.03], [200, 0]);
+  const y3 = useParallaxMotion([0.025, 0.03], [100, 0]);
   return (
     <section className="relative z-[2] flex justify-between lg:flex-row flex-col gap-6 mt-10">
       <motion.div

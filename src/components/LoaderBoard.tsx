@@ -1,6 +1,7 @@
 import { ArrowDown, ArrowUp } from "../assets/icons";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import useParallaxMotion from "../hooks/useParallaxMotion";
 
 const data = [
   {
@@ -136,11 +137,10 @@ const data = [
 ];
 
 export default function Leaderboard() {
-  const { scrollYProgress } = useScroll();
+  const translateY = useParallaxMotion([0.3, 0.35], [300, 0]);
 
-  const translateY = useTransform(scrollYProgress, [0.3, 0.35], [300, 0]);
-  const opacity = useTransform(scrollYProgress, [0.3, 0.35], [0, 1]);
-  const scale = useTransform(scrollYProgress, [0.3, 0.35], [0, 1]);
+  const opacity = useParallaxMotion([0.3, 0.35], [0, 1]);
+  const scale = useParallaxMotion([0.3, 0.35], [0, 1]);
   return (
     <div className="py-6   text-slate-200 overflow-scroll lg:overflow-hidden">
       <div>
